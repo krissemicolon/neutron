@@ -21,6 +21,7 @@ executable(
 
     'src/main.c',
     'src/cli.c',
+    'src/interpreter.c',
     
     c_args: [cflags, macros],
     # dependencies: ,

@@ -3,6 +3,7 @@
 #include <string.h>
 #include <getopt.h>
 
+#include "interpreter.h"
 #include "cli.h"
 #include "main.h"
 
@@ -16,7 +17,7 @@ int main(int argc, char **argv) {
     };
 
     int options;
-    while ((options = getopt(argc, argv, "hvf:")) != -1) {
+    while ((options = getopt(argc, argv, "hvf:t")) != -1) {
         switch (options) {
             case 'h':
                 print_help();
@@ -28,6 +29,11 @@ int main(int argc, char **argv) {
 
             case 'f':
                 stg.file = optarg;
+            break;
+
+            // interpreter hello world test
+            case 't':
+                interpret(">+++++++++[<++++++++>-]<.>+++++++[<++++>-]<+.+++++++..+++.[-]>++++++++[<++++>-] <.>+++++++++++[<++++++++>-]<-.--------.+++.------.--------.[-]>++++++++[<++++>- ]<+.[-]++++++++++.");
             break;
         }
     }

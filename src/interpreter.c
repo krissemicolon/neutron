@@ -20,11 +20,11 @@ void interpret(char *input) {
             break;
 
             case '+':
-                *ptr += 1;                
+                ++*ptr;
             break;
 
             case '-':
-                *ptr -= 1;
+                --*ptr;
             break;
 
             case '.':
@@ -33,6 +33,36 @@ void interpret(char *input) {
             
             case ',':
                 *ptr = getchar();
+            break;
+
+            case '[':
+                if(*ptr != 0) {
+                    break;
+                }
+                loop = 1;
+                while(loop > 0) {
+                    input[i] = input[++i];
+                    if(input[i] == '[') {
+                        loop++;
+                    } else if (input[i] == ']') {
+                        loop--;
+                    }
+                }
+            break;
+
+            case ']':
+                if(!*ptr) {
+                    break;
+                }
+                loop = 1;
+                while (loop > 0) {
+                    input[i] = input[--i];
+                    if (input[i] == '[') {
+                        loop--;
+                    } else if (input[i] == ']') {
+                        loop++;
+                    }
+                }
             break;
         }
     }
