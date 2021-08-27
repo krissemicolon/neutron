@@ -17,20 +17,20 @@ main timeline    split
 ## Syntax
 | Instruction |                                        |
 |-------------|----------------------------------------|
-| >           | Move all memory pointers in this timeline 1 cell to the right. |
-| <           | Move all memory pointers in this timeline pointer 1 cell to the left. |
-| +           | Increment all cells pointed to in this timeline. |
-| -           | Decrement all cells pointed to in this timeline. |
-| .           | Output a character for all cells pointed to in this timeline. |
-| ,           | Input a character and store it in all cells pointed to in this timeline. |
-| [           | Move this instruction pointer to the matching ] if all cells pointed to in this timeline are 0. If this timeline has no pointers, jump forward. |
-| ]           | Move this instruction pointer back to the matching [ if any cells pointed to in this timeline are nonzero. If this timeline has no pointers, do not jump backward. | 
-| ~           | Rewind the current tape back in time by 1 step. |
-| (           | Spawn a parallel timeline below the current timeline, with a copy of the tape and all pointers in it. This instruction pointer jumps to the matching ). Spawn a new instruction pointer within the newly spawned timeline, beginning execution immediately after this instruction. |
-| )           | If this is executed outside of the main timeline, kill this timeline and all the memory/instruction pointers currently in it. Otherwise, do nothing. |
-| v           | Move all memory pointers in this timeline to the same location in the next ("lower") parallel universe. If a lower timeline does not exist, these pointers are discarded instead. |
-| ^           | Move all memory pointers in this timeline to the same location in the previous ("higher") parallel universe. If a higher timeline does not exist, these pointers are discarded. |
-| @           | If the next ("lower") parallel universe contains a nonzero amount of memory pointers, freeze this instruction pointer for this turn. If the next parallel universe has no memory pointers, or if this is the "lowest" timeline, do nothing and continue.
+| `>`         | Move all memory pointers in this timeline 1 cell to the right. |
+| `<`         | Move all memory pointers in this timeline pointer 1 cell to the left. |
+| `+`         | Increment all cells pointed to in this timeline. |
+| `-`         | Decrement all cells pointed to in this timeline. |
+| `.`         | Output a character for all cells pointed to in this timeline. |
+| `,`         | Input a character and store it in all cells pointed to in this timeline. |
+| `[`         | Move this instruction pointer to the matching ] if all cells pointed to in this timeline are 0. If this timeline has no pointers, jump forward. |
+| `]`         | Move this instruction pointer back to the matching [ if any cells pointed to in this timeline are nonzero. If this timeline has no pointers, do not jump backward. | 
+| `~`         | Rewind the current tape back in time by 1 step. |
+| `(`         | Spawn a parallel timeline below the current timeline, with a copy of the tape and all pointers in it. This instruction pointer jumps to the matching ). Spawn a new instruction pointer within the newly spawned timeline, beginning execution immediately after this instruction. |
+| `)`         | If this is executed outside of the main timeline, kill this timeline and all the memory/instruction pointers currently in it. Otherwise, do nothing. |
+| `v`         | Move all memory pointers in this timeline to the same location in the next ("lower") parallel universe. If a lower timeline does not exist, these pointers are discarded instead. |
+| `^`         | Move all memory pointers in this timeline to the same location in the previous ("higher") parallel universe. If a higher timeline does not exist, these pointers are discarded. |
+| `@`         | If the next ("lower") parallel universe contains a nonzero amount of memory pointers, freeze this instruction pointer for this turn. If the next parallel universe has no memory pointers, or if this is the "lowest" timeline, do nothing and continue.
 
 ## Notes
 Notes
