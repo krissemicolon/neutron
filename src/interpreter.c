@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-unsigned char tape[30000] = {0};
+unsigned char tape[100000] = {0};
 unsigned char *ptr = tape;
 
 void interpret(char *input) {
