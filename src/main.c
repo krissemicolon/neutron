@@ -11,6 +11,8 @@ typedef struct {
     char *file;
 } settings;
 
+static char codebuff[sizeof(char) * 6000];
+
 int main(int argc, char **argv) {
     settings stg = {
         .file = "main.bf"
@@ -29,6 +31,8 @@ int main(int argc, char **argv) {
 
             case 'f':
                 stg.file = optarg;
+                read_file(stg.file);
+                interpret(codebuff);
             break;
 
             // hello world test
@@ -51,4 +55,11 @@ int main(int argc, char **argv) {
     }
 
     return 0;
+}
+
+void read_file(char *filename)
+{
+    FILE *code_file;    
+    code_file = fopen(filename, "r");
+    fgets(codebuff, sizeof(codebuff), code_file);
 }
