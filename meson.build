@@ -22,6 +22,7 @@ executable(
     'src/main.c',
     'src/cli.c',
     'src/interpreter.c',
+    'src/tokens.c',
     
     c_args: [cflags, macros],
     # dependencies: ,

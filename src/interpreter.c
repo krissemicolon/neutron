@@ -2,37 +2,56 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "tokens.h"
+#include "interpreter.h"
+
 unsigned char tape[100000] = {0};
 unsigned char *ptr = tape;
 
 void interpret(char *input) {
     size_t i;
     size_t loop;
+    tokens t;
 
     for(int i = 0; input[i] != 0; i++) {
         switch(input[i]) {
-            case '>':
+            case Right:
                 ++ptr;
             break;
 
-            case '<':
+            case Left:
                 --ptr;
             break;
 
-            case '+':
+            case Inc:
                 ++*ptr;
             break;
 
-            case '-':
+            case Dec:
                 --*ptr;
             break;
 
-            case '.':
+            case Write:
                 putchar(*ptr);
             break;
-            
-            case ',':
+
+            case Read:
                 *ptr = getchar();
+            break;
+
+            case Rewind:
+                interpret((char)invert((unsigned short)input[i - 1]));
+            break;
+
+            case Up:
+                continue;
+            break;
+
+            case Down:
+                continue;
+            break;
+
+            case Await:
             break;
 
             case '[':
@@ -63,6 +82,10 @@ void interpret(char *input) {
                         loop++;
                     }
                 }
+            break;
+
+            default:
+                continue;
             break;
         }
     }

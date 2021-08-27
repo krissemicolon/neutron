@@ -1,31 +1,37 @@
+#include <stddef.h>
+
 #include "tokens.h"
 
 unsigned short invert(unsigned short token) {
-    t = tokens;
+    tokens t;
 
     switch(token) {
-        case t.Right:
-            return t.Left;
+        case Right:
+            return Left;
         break;
 
-        case t.Left:
-            return t.Right;
+        case Left:
+            return Right;
         break;
 
-        case t.Inc:
-            return t.Dec;
+        case Inc:
+            return Dec;
         break;
 
-        case t.Dec:
-            return t.Inc;
+        case Dec:
+            return Inc;
         break;
 
-        case t.Up:
-            return t.Down;
+        case Up:
+            return Down;
         break;
 
-        case t.Down:
-            return t.Up;
+        case Down:
+            return Up;
+        break;
+
+        default:
+            return NULL;
         break;
     }
 }
