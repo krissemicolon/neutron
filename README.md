@@ -15,7 +15,7 @@ main timeline    split
 ```
 
 ## Syntax
-| Instruction |                                        |
+| Instruction | Description                            |
 |-------------|----------------------------------------|
 | `>`         | Move all memory pointers in this timeline 1 cell to the right. |
 | `<`         | Move all memory pointers in this timeline pointer 1 cell to the left. |
