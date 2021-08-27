@@ -25,7 +25,7 @@ void print_logo() {
         "    /  '/\\    /       )    |/     `-...-`\n"
         "   /    | |  `\\    /-'    /;\n"
         "   \\  ,,/ |    \\   D    .'  \\\n"
-        "jgs `\"\"`   \\  nnh  D_.-'L__nnh\n"
+        "    `\"\"`   \\  nnh  D_.-'L__nnh\n"
         "            `\"\"\"`\n"
         "I like elephants and god likes elephants\n"
     );

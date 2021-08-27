@@ -1,7 +1,7 @@
 # neutron
 > A 5dbfwmtt interpreter
 
-# Abstract
+## Abstract
 Like BF, 5D BF With Multiverse Time Travel operates on an array of memory cells initialized to zero. Multiple pointers to memory, and to the program, may coexist in each timeline. The state of the tape is stored as a timeline, allowing programs to rewind time. In addition, programs may create and traverse parallel universes, which are timelines that all execute simultaneously, "below" their parent timeline. Each timeline has its own pointer.
 The following graphic demonstrates the behavior of parallel timelines. Note that this does not include time travel, as that would make the graphic impossible to read.
 
@@ -14,7 +14,7 @@ main timeline    split
               3rd timeline +-----------/
 ```
 
-# Syntax
+## Syntax
 | Instruction |                                        |
 |-------------|----------------------------------------|
 | >           | Move all memory pointers in this timeline 1 cell to the right. |
@@ -32,13 +32,13 @@ main timeline    split
 | ^           | Move all memory pointers in this timeline to the same location in the previous ("higher") parallel universe. If a higher timeline does not exist, these pointers are discarded. |
 | @           | If the next ("lower") parallel universe contains a nonzero amount of memory pointers, freeze this instruction pointer for this turn. If the next parallel universe has no memory pointers, or if this is the "lowest" timeline, do nothing and continue.
 
-# Notes
+## Notes
 Notes
 It is not necessary for [] and () braces to be matched with each other, as long as each opening brace matches with its own closing brace. This means that [(]) is valid syntax, and so is ([)].
 Yes, the language is not strictly five-dimensional.
 The ~ instruction will only rewind the tape. That is, it will only undo the effects of +, -, or , instructions. Anything that doesn't manipulate the tape is ignored by ~.
 
-# Examples
+## Examples
 Double the amount of pointers in this timeline
 ```
 (^)
