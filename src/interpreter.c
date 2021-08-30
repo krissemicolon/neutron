@@ -9,9 +9,7 @@ unsigned char tape[100000] = {0};
 unsigned char *ptr = tape;
 
 void interpret(char *input) {
-    size_t i;
     size_t loop;
-    tokens t;
 
     for(int i = 0; input[i] != 0; i++) {
         switch(input[i]) {

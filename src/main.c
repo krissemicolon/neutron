@@ -9,16 +9,10 @@
 #include "cli.h"
 #include "main.h"
 
-typedef struct {
-    char *file;
-} settings;
-
 static char codebuff[sizeof(char) * 6000];
 
 int main(int argc, char **argv) {
-    settings stg = {
-        .file = "main.bf"
-    };
+    char *file;
 
     int options;
     while ((options = getopt(argc, argv, "hvf:i:")) != -1) {
@@ -32,13 +26,13 @@ int main(int argc, char **argv) {
             break;
 
             case 'f':
-                stg.file = optarg;
-                read_file(stg.file);
-                interpret(codebuff);
+                file = optarg;
+                read_file(file);
+                interpret(preprocess(codebuff));
             break;
 
             case 'i':
-                puts(preprocess(optarg));
+                interpret(preprocess(optarg));
             break;
         }
     }
@@ -55,5 +49,6 @@ int main(int argc, char **argv) {
 void read_file(char *filename) {
     FILE *code_file;    
     code_file = fopen(filename, "r");
+    #pragma GCC diagnostic ignored "-Wunused-result" 
     fgets(codebuff, sizeof(codebuff), code_file);
 }
