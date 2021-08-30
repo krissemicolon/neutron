@@ -42,7 +42,8 @@ void print_help() {
     printf("\n");
     printf(
         "Options:\n"
-        "-f\t\tInput the file that you want to run\n"
+        "-f\t\tInput a file that you want to run\n"
+        "-i\t\tInject instructions directly into the interpreter\n"
         "-h\t\tPrint the help page\n"
         "-v\t\tPrint version information\n"
         "Example:\n"

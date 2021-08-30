@@ -12,7 +12,7 @@ project(
     ]
 )
 
-cflags = '-Wall'
+cflags = '-g'
 macros = '-DVERSION="1.0.0"'
 inc = include_directories('include')
 
@@ -21,8 +21,10 @@ executable(
 
     'src/main.c',
     'src/cli.c',
+    'src/preprocessor.c',
     'src/interpreter.c',
     'src/tokens.c',
+    'src/util.c',
     
     c_args: [cflags, macros],
     # dependencies: ,

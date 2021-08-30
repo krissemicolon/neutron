@@ -3,6 +3,7 @@
 #include <string.h>
 #include <getopt.h>
 
+#include "preprocessor.h"
 #include "interpreter.h"
 #include "tokens.h"
 #include "cli.h"
@@ -20,7 +21,7 @@ int main(int argc, char **argv) {
     };
 
     int options;
-    while ((options = getopt(argc, argv, "hvf:")) != -1) {
+    while ((options = getopt(argc, argv, "hvf:i:")) != -1) {
         switch (options) {
             case 'h':
                 print_help();
@@ -34,6 +35,10 @@ int main(int argc, char **argv) {
                 stg.file = optarg;
                 read_file(stg.file);
                 interpret(codebuff);
+            break;
+
+            case 'i':
+                puts(preprocess(optarg));
             break;
         }
     }

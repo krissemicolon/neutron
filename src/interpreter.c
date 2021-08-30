@@ -39,10 +39,6 @@ void interpret(char *input) {
                 *ptr = getchar();
             break;
 
-            case Rewind:
-                interpret((char)invert((unsigned short)input[i - 1]));
-            break;
-
             case Up:
                 continue;
             break;
