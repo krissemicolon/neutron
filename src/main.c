@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
             break;
 
             case 'i':
-                interpret(preprocess(optarg));
+                puts(preprocess(optarg));
             break;
         }
     }
