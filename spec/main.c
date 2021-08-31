@@ -51,6 +51,7 @@ int main() {
 
     printf("\n");
 
+    // UTIL SECTION ========================
     printf("-- UTIL.C TESTS --\n");
 
     bool res_append_char = false;
