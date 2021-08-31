@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     char *file;
 
     int options;
-    while ((options = getopt(argc, argv, "hvf:i:")) != -1) {
+    while ((options = getopt(argc, argv, "hvf:i:t:")) != -1) {
         switch (options) {
             case 'h':
                 print_help();
@@ -32,6 +32,11 @@ int main(int argc, char **argv) {
             break;
 
             case 'i':
+                interpret(preprocess(optarg));
+            break;
+
+            // Testing Flag
+            case 't':
                 puts(preprocess(optarg));
             break;
         }

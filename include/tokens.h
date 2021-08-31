@@ -16,10 +16,10 @@ typedef enum {
     Await  = 64
 } tokens;
 
+unsigned short invert(unsigned short);
+
 bool is_valid_token(char);
 
 bool is_rewindable_token(char);
-
-unsigned short invert(unsigned short);
 
 #endif
